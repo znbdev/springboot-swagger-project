@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <!-- Define the log file name and location -->
+    <property name="LOG_FILE" value="spring-boot-example"/>
+    <!-- Output logs to a local directory named logs  -->
+    <property name="LOCAL_LOG_DIR" value="logs"/>
+    <!-- Define the log file pattern -->
+    <property name="LOG_FILE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] [%c{1}] - %m%n"/>
+    <!-- Define the log file appender -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${LOCAL_LOG_DIR}/${LOG_FILE}-local.log</file>
+        <encoder>
+            <pattern>${LOG_FILE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <logger name="org.springframework" level="INFO">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="com.example.demo" level="INFO">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <!-- Define the console appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%F]%M\(%L\) : %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
