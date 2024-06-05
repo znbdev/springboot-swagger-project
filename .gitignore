@@ -44,5 +44,5 @@ Thumbs.db
 *#
 
 # Biz
-/log/
 /tmp/output
+/logs/*
