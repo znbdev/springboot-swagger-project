@@ -20,7 +20,7 @@ import javax.persistence.Version;
 public class Inventory extends CommonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productId;
+    private Long inventoryId;
 
     @NotNull
     private int quantity;
