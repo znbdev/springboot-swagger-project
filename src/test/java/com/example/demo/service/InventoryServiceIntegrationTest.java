@@ -2,11 +2,7 @@
 //
 //import com.example.demo.entity.Inventory;
 //import com.example.demo.repository.InventoryRepository;
-//import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
-//import org.mockito.InjectMocks;
-//import org.mockito.Mock;
-//import org.mockito.MockitoAnnotations;
 //
 //import java.util.Optional;
 //
@@ -16,22 +12,24 @@
 //import static org.mockito.Mockito.verify;
 //import static org.mockito.Mockito.when;
 //
-//// 使用 Mockito 和 JUnit 的单元测试代码
-//class InventoryServiceTest {
+////  使用 Spring Boot Test 和 Mockito 的集成测试代码
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.boot.test.mock.mockito.MockBean;
 //
-//    @InjectMocks
+//import static org.junit.jupiter.api.Assertions.assertThrows;
+//
+//@SpringBootTest
+//public class InventoryServiceIntegrationTest {
+//
+//    @Autowired
 //    private InventoryService inventoryService;
 //
-//    @Mock
+//    @MockBean
 //    private InventoryRepository inventoryRepository;
 //
-//    @BeforeEach
-//    public void setUp() {
-//        MockitoAnnotations.openMocks(this);
-//    }
-//
 //    @Test
-//    void testPurchaseProduct() {
+//    public void testPurchaseProduct() {
 //        Long productId = 1L;
 //        Inventory inventory = new Inventory();
 //        inventory.setProductId(productId);
@@ -46,7 +44,7 @@
 //    }
 //
 //    @Test
-//    void testPurchaseProductInsufficientInventory() {
+//    public void testPurchaseProductInsufficientInventory() {
 //        Long productId = 1L;
 //        Inventory inventory = new Inventory();
 //        inventory.setProductId(productId);
@@ -60,7 +58,7 @@
 //    }
 //
 //    @Test
-//    void testCancelProduct() {
+//    public void testCancelProduct() {
 //        Long productId = 1L;
 //        Inventory inventory = new Inventory();
 //        inventory.setProductId(productId);
@@ -74,3 +72,4 @@
 //        assert(inventory.getQuantity() == 2);
 //    }
 //}
+//
