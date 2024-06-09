@@ -86,4 +86,15 @@ public class SwaggerConfig {
                 .groupName("Product API")
                 .apiInfo(apiInfo());
     }
+
+    @Bean
+    public Docket inventoryApi() {
+        return new Docket(DocumentationType.OAS_30)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(CONTROLLER_PACKAGE))
+                .paths(PathSelectors.ant("/api/inventory/**"))
+                .build()
+                .groupName("Inventory API")
+                .apiInfo(apiInfo());
+    }
 }
