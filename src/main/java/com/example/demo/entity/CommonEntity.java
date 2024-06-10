@@ -16,12 +16,12 @@ import java.sql.Timestamp;
 @MappedSuperclass
 public class CommonEntity implements Serializable {
 
-    @ApiModelProperty(dataType = "java.lang.Long", example = "1623337338000")
+    @ApiModelProperty(dataType = "java.lang.Long", example = "20240610192830")
 //    @ApiModelProperty(dataType = "java.lang.Long")
     @Column(name = "create_date", nullable = false, updatable = false)
     private Timestamp createDate;
 
-//    @ApiModelProperty(dataType = "java.lang.Long")
+    @ApiModelProperty(dataType = "java.lang.Long")
     @Column(name = "update_date", nullable = false)
     private Timestamp updateDate;
 

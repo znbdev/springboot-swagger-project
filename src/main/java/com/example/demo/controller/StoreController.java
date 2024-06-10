@@ -24,6 +24,7 @@ import java.util.Optional;
 public class StoreController implements CrudController<StoreTbl> {
 
     private final StoreTblService storeTblService;
+
     @ApiOperation(value = "Get Store")
     @GetMapping("/getAllByName")
     public List<StoreTbl> getAllByName(StoreBean storeBean) {

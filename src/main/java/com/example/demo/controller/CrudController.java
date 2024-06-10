@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
+import io.swagger.annotations.ApiOperation;
+
 import java.util.List;
 import java.util.Optional;
-
-import io.swagger.annotations.ApiOperation;
 
 public interface CrudController<T> {
 

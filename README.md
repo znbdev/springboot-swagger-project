@@ -33,6 +33,7 @@ java -jar target/springboot-swagger-project-0.0.1-SNAPSHOT.jar --spring.profiles
 `spring.profiles.active=local;server.port=8080`
 
 # Swagger UI
+
 [URL of Swagger UI](http://localhost:8080/swagger-ui/)
 
 # Note
