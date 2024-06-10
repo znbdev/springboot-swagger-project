@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.example.demo.entity.common.CommonEntity;
 import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;

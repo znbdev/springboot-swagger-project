@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.bean.StoreBean;
+import com.example.demo.controller.common.CrudController;
 import com.example.demo.dto.StoreRequestDTO;
 import com.example.demo.entity.StoreTbl;
 import com.example.demo.service.StoreTblService;
