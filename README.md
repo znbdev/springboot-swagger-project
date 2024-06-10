@@ -1,6 +1,6 @@
 springboot-swagger-project
 -----
-This is a springboot swagger example.
+This is a springboot swagger RESTful API example.
 
 # How to run
 

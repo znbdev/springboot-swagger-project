@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,9 +16,12 @@ import java.sql.Timestamp;
 @MappedSuperclass
 public class CommonEntity implements Serializable {
 
+    @ApiModelProperty(dataType = "java.lang.Long", example = "1623337338000")
+//    @ApiModelProperty(dataType = "java.lang.Long")
     @Column(name = "create_date", nullable = false, updatable = false)
     private Timestamp createDate;
 
+//    @ApiModelProperty(dataType = "java.lang.Long")
     @Column(name = "update_date", nullable = false)
     private Timestamp updateDate;
 

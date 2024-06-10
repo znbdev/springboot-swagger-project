@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class CombinedInventory {
     @Id
     private String id;
-    private String storeId;
+    private Long storeId;
     private String storeName;
     private String storeAddress;
     private String storePhoneNumber;

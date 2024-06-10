@@ -23,6 +23,14 @@ public class ProductController {
 
     private final ProductTblService productTblService;
 
+    @ApiOperation(value = "Get Products")
+    @GetMapping("/get")
+    public Optional<ProductTbl> get(Long id) {
+        Optional<ProductTbl> product = productTblService.findById(id);
+        log.info("Product: {}", product);
+        return product;
+    }
+
     @ApiOperation(value = "Get All Products")
     @GetMapping("/getAll")
     public List<ProductTbl> getAll() {

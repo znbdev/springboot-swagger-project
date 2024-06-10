@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface InventoryTblRepository extends JpaRepository<InventoryTbl, Long> {
 
-    InventoryTbl findByStoreIdAndProductId(String storeId, Long productId);
+    InventoryTbl findByStoreIdAndProductId(Long storeId, Long productId);
 }

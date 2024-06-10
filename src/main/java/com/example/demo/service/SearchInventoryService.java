@@ -17,14 +17,14 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class InventoryService {
+public class SearchInventoryService {
     private final CombinedInventoryRepository mongoRepository;
     private final InventoryTblRepository oracleInventoryRepository;
     private final ProductTblRepository oracleProductRepository;
     private final StoreTblRepository oracleStoreRepository;
 
     @Transactional
-    public CombinedInventory findByStoreIdAndProductId(String storeId, Long productId) {
+    public CombinedInventory findByStoreIdAndProductId(Long storeId, Long productId) {
         // 从MongoDB检索数据
         Optional<CombinedInventory> mongoInventory = mongoRepository.findByStoreIdAndProductId(storeId, productId);
         if (mongoInventory.isPresent()) {
