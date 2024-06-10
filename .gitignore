@@ -46,3 +46,4 @@ Thumbs.db
 # Biz
 /tmp/output
 /logs/*
+/H2/

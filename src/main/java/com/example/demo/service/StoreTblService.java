@@ -31,9 +31,8 @@ public class StoreTblService implements CrudService<StoreTbl, Long> {
 
     @Override
     public Optional<StoreTbl> findById(Long aLong) {
-        return Optional.empty();
+        return storeTblRepository.findById(aLong);
     }
-
 
     @Override
     public StoreTbl save(StoreTbl entity) {
@@ -47,7 +46,7 @@ public class StoreTblService implements CrudService<StoreTbl, Long> {
 
     @Override
     public void deleteById(Long aLong) {
-
+        storeTblRepository.deleteById(aLong);
     }
 
 
