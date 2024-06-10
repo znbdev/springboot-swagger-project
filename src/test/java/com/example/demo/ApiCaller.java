@@ -10,7 +10,7 @@ public class ApiCaller {
 
     public static void main(String[] args) throws IOException {
         // API Endpoint
-        String apiUrl = "http://localhost:8080/api/product/get?id=1";
+        String apiUrl = "http://localhost:8080/api/store/get?id=1";
 
         // 创建URL对象
         URL url = new URL(apiUrl);
