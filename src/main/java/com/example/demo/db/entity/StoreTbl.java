@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "test_store_tbl")
+@Table(name = "store_tbl")
 public class StoreTbl extends TimeEntity {
     @EmbeddedId
     private StorePk storePk;
