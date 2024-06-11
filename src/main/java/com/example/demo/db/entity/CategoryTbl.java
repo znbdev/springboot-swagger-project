@@ -1,5 +1,6 @@
-package com.example.demo.entity;
+package com.example.demo.db.entity;
 
+import com.example.demo.db.entity.common.CommonEntity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

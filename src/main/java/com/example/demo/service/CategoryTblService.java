@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.CategoryTbl;
-import com.example.demo.repository.CategoryTblRepository;
+import com.example.demo.db.entity.CategoryTbl;
+import com.example.demo.db.repository.CategoryTblRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

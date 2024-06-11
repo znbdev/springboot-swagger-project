@@ -1,8 +1,8 @@
 package com.example.demo.service
 
-import com.example.demo.entity.ProductTbl
+
 import spock.lang.Specification
-import com.example.demo.repository.ProductTblRepository
+import com.example.demo.db.repository.ProductTblRepository
 
 class ProductTblServiceSpec extends Specification {
 

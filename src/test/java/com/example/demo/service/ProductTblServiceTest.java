@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.ProductTbl;
-import com.example.demo.repository.ProductTblRepository;
+import com.example.demo.db.entity.ProductTbl;
+import com.example.demo.db.repository.ProductTblRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

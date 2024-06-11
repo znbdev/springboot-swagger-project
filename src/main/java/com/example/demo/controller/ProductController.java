@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.ProductTbl;
+import com.example.demo.db.entity.ProductTbl;
 import com.example.demo.service.ProductTblService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
