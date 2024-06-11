@@ -86,4 +86,15 @@ public class SwaggerConfig {
                 .groupName("Product API")
                 .apiInfo(apiInfo());
     }
+
+    @Bean
+    public Docket storeApi() {
+        return new Docket(DocumentationType.OAS_30)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(CONTROLLER_PACKAGE))
+                .paths(PathSelectors.ant("/api/store/**"))
+                .build()
+                .groupName("Store API")
+                .apiInfo(apiInfo());
+    }
 }

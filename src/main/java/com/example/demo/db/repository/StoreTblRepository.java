@@ -7,5 +7,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface StoreTblRepository extends JpaRepository<StoreTbl, StorePk> {
     StoreTbl findByStorePk(StorePk key);
     void delete(StoreTbl entity);
-    void deleteById(StorePk key);
 }
