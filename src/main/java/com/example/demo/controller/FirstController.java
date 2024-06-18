@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 @RequiredArgsConstructor
@@ -41,7 +43,7 @@ public class FirstController {
     public SampleRequestData okHttpGetTest(@RequestParam String title, @RequestParam String text) {
         log.info(title);
         log.info(text);
-        return new SampleRequestData(text, title);
+        return new SampleRequestData(text, title, getTestList());
     }
 
     @ApiOperation("OkHttp Post Test")
@@ -49,6 +51,13 @@ public class FirstController {
     public SampleRequestData okHttpPostTest(@RequestBody SampleRequestData requestData) {
         log.info(requestData.getTitle());
         log.info(requestData.getText());
-        return new SampleRequestData(requestData.getText(), requestData.getTitle());
+        return new SampleRequestData(requestData.getText(), requestData.getTitle(), getTestList());
+    }
+
+    private static List<String> getTestList() {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        return list;
     }
 }
