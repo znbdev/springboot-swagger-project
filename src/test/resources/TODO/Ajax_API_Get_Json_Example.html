@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJAX API Call Example</title>
+    <title>AJAX GET API Call Example</title>
     <script>
         function sendApiRequest() {
             const jsonInput = document.getElementById("jsonInput").value;
 
-            let data;
+            let params;
             try {
-                data = JSON.parse(jsonInput);
+                params = JSON.parse(jsonInput);
             } catch (e) {
                 document.getElementById("result").innerText = "Invalid JSON: " + e.message;
                 return;
             }
 
-            fetch("http://localhost:8080/api/first/okHttpPostTest", {
-                method: "POST",
+            const queryString = new URLSearchParams(params).toString();
+            const url = `http://localhost:8080/api/first/okHttpGetTest?${queryString}`;
+
+            fetch(url, {
+                method: "GET",
                 headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "*/*"
-                },
-                body: JSON.stringify(data)
+                    "Accept": "*/*",
+                    "Content-Type": "application/json"
+                }
             })
             .then(response => {
                 if (!response.ok) {
@@ -41,7 +43,7 @@
     </script>
 </head>
 <body>
-<h1>AJAX API Call Example</h1>
+<h1>AJAX GET API Call Example</h1>
 
 <label for="jsonInput">JSON Input:</label><br>
 <textarea id="jsonInput" name="jsonInput" rows="10" cols="50">

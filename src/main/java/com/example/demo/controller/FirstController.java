@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Locale;
@@ -20,6 +21,7 @@ import java.util.Locale;
 @RestController
 @Api(tags = "First API")
 @RequestMapping("/api/first")
+@CrossOrigin(origins = "*")
 public class FirstController {
     private final MessageSource messageSource;
 
@@ -34,7 +36,14 @@ public class FirstController {
         return "This is the first API";
     }
 
-    @CrossOrigin(origins = "*")
+    @ApiOperation("OkHttp Get Test")
+    @GetMapping("/api/first/okHttpGetTest")
+    public SampleRequestData okHttpGetTest(@RequestParam String title, @RequestParam String text) {
+        log.info(title);
+        log.info(text);
+        return new SampleRequestData(text, title);
+    }
+
     @ApiOperation("OkHttp Post Test")
     @PostMapping("/okHttpPostTest")
     public SampleRequestData okHttpPostTest(@RequestBody SampleRequestData requestData) {
